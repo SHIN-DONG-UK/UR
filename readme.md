@@ -66,16 +66,16 @@
 ### 4. 학부모용 모바일 화면
 
 - 로그인 화면
-<img src="https://github.com/user-attachments/assets/1c36f229-1fbf-4951-91a9-6b4f1997804f" width=50%>
+<img src="https://github.com/user-attachments/assets/1c36f229-1fbf-4951-91a9-6b4f1997804f" width=30%>
 
 - 메인 화면(공지사항, 일정)
-<img src="https://github.com/user-attachments/assets/f880f083-df5b-4125-bfed-bc112c8f2b46" width=50%>
+<img src="https://github.com/user-attachments/assets/f880f083-df5b-4125-bfed-bc112c8f2b46" width=30%>
 
 - 메인화면(아동 앨범)
-<img src="https://github.com/user-attachments/assets/be32eac9-a06c-4c47-8811-7eae27394553" width=50%>
+<img src="https://github.com/user-attachments/assets/be32eac9-a06c-4c47-8811-7eae27394553" width=30%>
 
 - 아동 앨범 상세(날짜별 나열)
-<img src="https://github.com/user-attachments/assets/06d0eab6-f9fc-4ac4-9a55-f9a7490686bb" width=50%>
+<img src="https://github.com/user-attachments/assets/06d0eab6-f9fc-4ac4-9a55-f9a7490686bb" width=30%>
 
 
 ## 3. 회고
