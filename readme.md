@@ -66,18 +66,16 @@
 ### 4. 학부모용 모바일 화면
 
 - 로그인 화면
-- ![rn_image_picker_lib_temp_76eb6b3a-c65a-4199-86a7-48c499269634](https://github.com/user-attachments/assets/1c36f229-1fbf-4951-91a9-6b4f1997804f)
+<img src="https://github.com/user-attachments/assets/1c36f229-1fbf-4951-91a9-6b4f1997804f" width=50%>
 
 - 메인 화면(공지사항, 일정)
-![rn_image_picker_lib_temp_9d742ac8-f015-4033-a8ec-bc77c9654e21](https://github.com/user-attachments/assets/f880f083-df5b-4125-bfed-bc112c8f2b46)
-
+<img src="https://github.com/user-attachments/assets/f880f083-df5b-4125-bfed-bc112c8f2b46" width=50%>
 
 - 메인화면(아동 앨범)
-![rn_image_picker_lib_temp_6eb025d8-4518-4b78-833a-7d5487e799d7](https://github.com/user-attachments/assets/be32eac9-a06c-4c47-8811-7eae27394553)
-
+<img src="https://github.com/user-attachments/assets/be32eac9-a06c-4c47-8811-7eae27394553" width=50%>
 
 - 아동 앨범 상세(날짜별 나열)
-![rn_image_picker_lib_temp_a41afea7-6756-4750-826a-f4929a6c04e6](https://github.com/user-attachments/assets/06d0eab6-f9fc-4ac4-9a55-f9a7490686bb)
+<img src="https://github.com/user-attachments/assets/06d0eab6-f9fc-4ac4-9a55-f9a7490686bb" width=50%>
 
 
 ## 3. 회고
