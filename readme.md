@@ -47,35 +47,38 @@
 ### 3. 교사용 웹 브라우저 화면
 
 - 로그인 화면
-  ![pc-main](/uploads/d4b2c780936ff05f082a676d1d41b2d7/pc-main.png)
+![pc-main](https://github.com/user-attachments/assets/660bcba7-3ead-4adb-9767-7a5e290ca46a)
 
 - 메인화면(일정, 공지사항, 출석현황, 아동 정보보)
-  ![teacher-main](/uploads/f5219938a8d2c2c69f45350051aa338d/teacher-main.png)
+![teacher-main](https://github.com/user-attachments/assets/ff2e6e38-a0f1-4324-b305-76c0bdbd32fe)
 - 아동관리 페이지
-  ![teacher-child](/uploads/5cbb89206131e31d69228fd6aa4f894b/teacher-child.png)
+![teacher-child](https://github.com/user-attachments/assets/eb82e8f2-9df6-4c3d-ac07-220b7dbd3550)
 - 아동 추가 화면
-  ![teacher-childadd](/uploads/983cd9851470f3a8b96ac30c4bdf2419/teacher-childadd.png)
+![teacher-childadd](https://github.com/user-attachments/assets/19a11994-82f6-40ed-b6b3-e7d3e4450f8a)
 - 부모 계정 관리 페이지
-  ![teacher-parent](/uploads/787347403462bcfcae6bb83b81b0b7ce/teacher-parent.png)
+![teacher-parent](https://github.com/user-attachments/assets/e7bacb31-a983-48f7-89e4-b3ba7bb29ba7)
 - 앨범
-  ![album](/uploads/71a0522ebc5fa3fc6f4422200d147e67/album.png)
+![album](https://github.com/user-attachments/assets/406feb5f-7b83-4a18-a51d-07c7137526bd)
 
 - 앨범 디테일 페이지
-  ![album-detail](/uploads/4e51efdcd19a052e72a40911b5819741/album-detail.png)
+![album-detail](https://github.com/user-attachments/assets/b5d8a9a2-521a-4952-83d5-1cec83393d72)
 
 ### 4. 학부모용 모바일 화면
 
 - 로그인 화면
-  <img src="/uploads/4104246a72260fefe8a85c8e2dc3efee/rn_image_picker_lib_temp_76eb6b3a-c65a-4199-86a7-48c499269634.jpg" width="200" height="400"/>
+- ![rn_image_picker_lib_temp_76eb6b3a-c65a-4199-86a7-48c499269634](https://github.com/user-attachments/assets/1c36f229-1fbf-4951-91a9-6b4f1997804f)
 
 - 메인 화면(공지사항, 일정)
-  <img src="/uploads/331d9f237be0dcb68f9d31c036eedb03/rn_image_picker_lib_temp_9d742ac8-f015-4033-a8ec-bc77c9654e21.jpg" width="200" height="400"/>
+![rn_image_picker_lib_temp_9d742ac8-f015-4033-a8ec-bc77c9654e21](https://github.com/user-attachments/assets/f880f083-df5b-4125-bfed-bc112c8f2b46)
+
 
 - 메인화면(아동 앨범)
-  <img src="/uploads/c58e586619a58c0dac996c022f16c01a/rn_image_picker_lib_temp_6eb025d8-4518-4b78-833a-7d5487e799d7.jpg" width="200" height="400"/>
+![rn_image_picker_lib_temp_6eb025d8-4518-4b78-833a-7d5487e799d7](https://github.com/user-attachments/assets/be32eac9-a06c-4c47-8811-7eae27394553)
 
-- 아동 앨범 상세(날짜별 나열열)
-  <img src="/uploads/d5da078ec14d7559e4c164da2b3e67e3/rn_image_picker_lib_temp_a41afea7-6756-4750-826a-f4929a6c04e6.jpg" width="200" height="400"/>
+
+- 아동 앨범 상세(날짜별 나열)
+![rn_image_picker_lib_temp_a41afea7-6756-4750-826a-f4929a6c04e6](https://github.com/user-attachments/assets/06d0eab6-f9fc-4ac4-9a55-f9a7490686bb)
+
 
 ## 3. 회고
 
