@@ -1,0 +1,12 @@
+runs/
+data/
+venv/
+data/
+myenv/
+.install_logs/
+hailo_dataflow_compiler-3.31.0-py3-none-linux_x86_64.whl
+hailo_sdk_client.log
+AI-Camera/
+hailort.1.log
+hailort.log
+.env

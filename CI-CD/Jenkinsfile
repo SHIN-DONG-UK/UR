@@ -1,0 +1,81 @@
+pipeline {
+    agent any
+
+    environment {
+        BACKEND_DIR      = 'backend'
+        WORKSPACE_DIR    = "${env.WORKSPACE}"
+        SERVICE_HOME     = '/srv/ur'
+        COMPOSE_FILE     = "${SERVICE_HOME}/docker-compose.yml"
+        TARGET_SERVICES  = 'backend frontend nginx mysql redis mongodb'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps { checkout scm }
+        }
+
+        stage('Inject application.properties') {
+            steps {
+                configFileProvider([configFile(fileId: 'bb1e1953-a5b7-4ac8-8c67-5f0591cb0a1c', variable: 'BACKEND_PROP_FILE')]) {
+                    sh '''
+                        rm -rf config
+                        mkdir -p config
+                        cp "$BACKEND_PROP_FILE" config/application.properties
+                        chmod 600 config/application.properties
+                    '''
+                }
+            }
+        }
+
+        stage('Build') {
+            steps {
+                dir("${BACKEND_DIR}") {
+                    sh 'chmod +x ./gradlew'
+                    sh './gradlew clean build -x test --no-daemon'
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                withCredentials([
+                    string(credentialsId: 'MYSQL_ROOT_PASSWORD', variable: 'MYSQL_ROOT_PASSWORD'),
+                    string(credentialsId: 'MYSQL_USER',          variable: 'MYSQL_USER'),
+                    string(credentialsId: 'MYSQL_PASSWORD',      variable: 'MYSQL_PASSWORD'),
+                    string(credentialsId: 'MYSQL_DATABASE',      variable: 'MYSQL_DATABASE'),
+                    string(credentialsId: 'git_pat',             variable: 'TOKEN')
+                ]) {
+                    sh '''
+                        set -e
+                        cd "${SERVICE_HOME}"
+
+                        git config --global --add safe.directory "${SERVICE_HOME}"
+                        if [ ! -d .git ]; then
+                          git clone -b develop https://oauth2:${TOKEN}@lab.ssafy.com/s12-final/S12P31C203.git .
+                        else
+                          git fetch https://oauth2:${TOKEN}@lab.ssafy.com/s12-final/S12P31C203.git develop
+                          git reset --hard FETCH_HEAD
+                        fi
+
+                        docker compose -f "${COMPOSE_FILE}" rm -sf ${TARGET_SERVICES}
+
+                        rm -rf config/application.properties
+                        mkdir -p config
+                        cp "${WORKSPACE_DIR}/config/application.properties" config/application.properties
+
+                        export MYSQL_ROOT_PASSWORD
+                        export MYSQL_USER
+                        export MYSQL_PASSWORD
+                        export MYSQL_DATABASE
+
+                        docker compose -f "${COMPOSE_FILE}" up -d --build ${TARGET_SERVICES}
+                    '''
+                }
+            }
+        }
+    }
+
+    post {
+        always { deleteDir() }
+    }
+}

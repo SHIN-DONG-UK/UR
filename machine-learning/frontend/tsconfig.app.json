@@ -1,0 +1,39 @@
+// tsconfig.json
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@assets/*":   ["src/shared/assets/*"],
+      "@shared/*":   ["src/shared/*"],
+      "@ui/*":       ["src/shared/ui/*"],
+      "@features/*": ["src/features/*"],
+      "@pages/*":    ["src/pages/*"],
+      "@routes/*":   ["src/routes/*"],
+      "@utils/*":    ["src/utils/*"],
+      "@app/*":      ["src/app/*"],
+      "@firebase/*": ["src/firebase/*"]
+    },
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+    "types": ["vite/client"],
+
+  },
+  "exclude": ["node_modules", "**/node_modules", "dist"]
+}

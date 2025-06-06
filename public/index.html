@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>등·하원 알림 웹앱</title>
+</head>
+<body>
+  <h1>등·하원 알림 웹앱</h1>
+  <p>푸시 권한 상태: <span id="perm-status">–</span></p>
+  <p>내 FCM 토큰:</p>
+  <textarea id="fcm-token" rows="5" cols="50" readonly></textarea>
+  <script type="module">
+    // 1) Firebase 모듈 불러오기
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.0/firebase-app.js";
+    import { getMessaging, getToken, onMessage } from "https://www.gstatic.com/firebasejs/11.8.0/firebase-messaging.js";
+
+    // 2) Firebase 설정
+    const firebaseConfig = {
+      apiKey: "AIzaSyDe97mX36A7f9vJ4fWsFK4v5JFGoaj-i-U",
+      authDomain: "c203-24ba7.firebaseapp.com",
+      projectId: "c203-24ba7",
+      storageBucket: "c203-24ba7.firebasestorage.app",
+      messagingSenderId: "491258142514",
+      appId: "1:491258142514:web:f679b288aea2509beb012b",
+      measurementId: "G-81P6XFHD3T"
+    };
+
+    // 3) Firebase 초기화
+    const app = initializeApp(firebaseConfig);
+    const messaging = getMessaging(app);
+    
+    // 4) 서비스 워커 등록
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/firebase-messaging-sw.js')
+        .then(registration => {
+          console.log('Service Worker 등록됨:', registration);
+
+          // 5) 알림 권한 요청
+          return Notification.requestPermission();
+        })
+        .then(permission => {
+          document.getElementById('perm-status').textContent = permission;
+          if (permission !== 'granted') throw new Error('알림 권한 거부됨');
+
+          // 6) FCM 토큰 발급
+          return getToken(messaging, {
+            vapidKey: 'BGJhKUjmIxoqQzsBE6zoqKf9G28KGuXQmbeI51rM_FkWj6u7UG3TpNmDLxALNCwmSaEo9e0gAqffWXN86Z6JvOo',  // Firebase 콘솔에서 Web Push 인증서(VAPID) 키 복사
+            serviceWorkerRegistration: navigator.serviceWorker.ready
+          });
+        })
+        .then(token => {
+          console.log('FCM 등록 토큰:', token);
+          document.getElementById('fcm-token').textContent = token;
+          // TODO: 이 토큰을 백엔드(DB)에 저장하는 API 호출
+        })
+        .catch(err => {
+          console.error('FCM 초기화 오류:', err);
+        });
+    } else {
+      console.warn('Service Worker를 지원하지 않는 브라우저입니다.');
+    }
+
+    // 7) 포그라운드 메시지 수신 핸들러
+    onMessage(messaging, payload => {
+      console.log('Foreground message:', payload);
+      const { title, body } = payload.notification || {};
+      if (title && body) {
+        new Notification(title, { body });
+      }
+    });
+  </script>
+</body>
+</html>
